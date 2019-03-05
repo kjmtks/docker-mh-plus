@@ -1,7 +1,7 @@
 FROM gcc:4.6
 MAINTAINER Takeshi Kojima <kojima@tokushima-u.ac.jp>
 
-ENV USER kojima
+ENV USER yourname
 ENV HOME /home/${USER}
 
 RUN mkdir tmp; cd tmp &&\
@@ -25,8 +25,8 @@ RUN mkdir tmp; cd tmp &&\
 RUN useradd -m ${USER}
 USER ${USER}
 WORKDIR ${HOME}
-ADD --chown=kojima:kojima ./Mail ${HOME}/Mail
-ADD --chown=kojima:kojima ./.mh_profile ${HOME}/.mh_profile
+ADD --chown=yourname:yourname ./Mail ${HOME}/Mail
+ADD --chown=yourname:yourname ./.mh_profile ${HOME}/.mh_profile
 
 
 
